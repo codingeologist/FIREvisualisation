@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, Markup
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
+from markupsafe import Markup
 import pandas as pd
 import plotly.graph_objs as go
 from plotly.offline import plot
@@ -27,7 +28,7 @@ login_manager.login_view = "login"
 
 # Creating Entry class
 class Entry(db.Model):
-    __tablename__ = 'montlydate'
+    __tablename__ = 'monthlydate'
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String)
     axis = db.Column(db.Integer)
@@ -59,6 +60,11 @@ class User(UserMixin):
 
 # creating an admin user
 admin_user = User(1)
+
+
+@app.before_request
+def create_tables():
+    db.create_all()
 
 
 # login route

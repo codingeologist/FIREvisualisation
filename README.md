@@ -9,3 +9,11 @@ Hi, this is my little project for web visualisation and local database managemen
 2. align graphs in nice grid form (I was banging my head with aligning with bootstrap)
 3. Create requirement.txt. Fortunately, pythonanywhere has built-in modules installed, so I did not install or specify and modules.
 4. Write clean code
+
+# NOTES 
+
+## TODO
+1. Make sqlite database persistent.
+2. Refactor login pipeline.
+3. Refactor database, user analysis classes.
+4. Dockerise app.
