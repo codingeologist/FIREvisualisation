@@ -27,7 +27,8 @@ docker run -d -p 5100:5100 firetracker:$APP_VERSION
 ```
 
 # Localhost server
-[host: localhost port: 5000](http://localhost/5000)
+- [host: localhost port: 5000](http://localhost/5000)
+- testing username/password: admin/admin
 
 # Things to do
 
